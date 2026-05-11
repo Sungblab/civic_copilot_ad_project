@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@source "../public/**/*.{html,js}";
+
+@theme {
+  --font-sans: Inter, "Pretendard", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "Geist Mono", "SF Mono", Consolas, monospace;
+  --color-mint: #00d4a4;
+  --color-mint-deep: #00b48a;
+  --color-mint-soft: #ddfff6;
+  --color-ink: #0a0a0a;
+  --color-charcoal: #1c1c1e;
+  --color-steel: #5a5a5c;
+  --color-stone: #888888;
+  --color-hairline: #e5e5e5;
+  --color-surface: #f7f7f7;
+  --color-soft: #fafafa;
+  --color-tag: #3772cf;
+  --color-warn: #c37d0d;
+  --color-error: #d45656;
+}
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-white text-ink antialiased;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+  }
+}
+
+@layer components {
+  .app-container {
+    @apply mx-auto min-h-screen w-full max-w-[1040px] px-4 pb-28 pt-4 sm:px-6 lg:pb-10;
+  }
+
+  .card {
+    @apply rounded-xl border border-hairline bg-white shadow-[0_18px_54px_-36px_rgba(0,0,0,0.35)];
+  }
+
+  .pill-button {
+    @apply inline-flex min-h-11 items-center justify-center rounded-full px-5 py-2.5 text-sm font-medium transition active:scale-[0.98] disabled:cursor-not-allowed disabled:bg-hairline disabled:text-stone;
+  }
+
+  .pill-button-primary {
+    @apply inline-flex min-h-11 items-center justify-center rounded-full bg-ink px-5 py-2.5 text-sm font-medium text-white transition active:scale-[0.98] disabled:cursor-not-allowed disabled:bg-hairline disabled:text-stone;
+  }
+
+  .pill-button-accent {
+    @apply inline-flex min-h-11 items-center justify-center rounded-full bg-mint px-5 py-2.5 text-sm font-medium text-ink transition active:scale-[0.98] disabled:cursor-not-allowed disabled:bg-hairline disabled:text-stone;
+  }
+
+  .pill-button-secondary {
+    @apply inline-flex min-h-11 items-center justify-center rounded-full border border-hairline bg-white px-5 py-2.5 text-sm font-medium text-ink transition active:scale-[0.98] disabled:cursor-not-allowed disabled:bg-hairline disabled:text-stone;
+  }
+
+  .field-label {
+    @apply grid gap-2 text-sm font-medium text-charcoal;
+  }
+
+  .field-input {
+    @apply min-h-11 w-full rounded-lg border border-hairline bg-white px-3.5 py-2.5 text-base text-ink outline-none transition placeholder:text-stone focus:border-mint focus:ring-4 focus:ring-mint/15;
+  }
+
+  .section-title {
+    @apply text-[11px] font-semibold uppercase tracking-[0.12em] text-steel;
+  }
+
+  .result-section {
+    @apply rounded-xl border border-hairline bg-white p-4;
+  }
+
+  .bottom-bar {
+    @apply fixed inset-x-0 bottom-0 z-30 border-t border-hairline bg-white/95 px-4 py-3 backdrop-blur lg:hidden;
+  }
+}
