@@ -34,6 +34,7 @@ function normalizeAnalyzeInput(body = {}) {
   return {
     scenario: typeof body.scenario === 'string' ? body.scenario : 'unknown',
     location: typeof body.location === 'string' ? body.location : '',
-    description: typeof body.description === 'string' ? body.description : ''
+    description: typeof body.description === 'string' ? body.description : '',
+    hasPhoto: body.hasPhoto === true
   };
 }
